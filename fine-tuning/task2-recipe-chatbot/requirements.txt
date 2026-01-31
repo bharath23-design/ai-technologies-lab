@@ -1,0 +1,9 @@
+torch
+transformers
+peft
+datasets
+accelerate
+fastapi
+uvicorn
+jinja2
+python-multipart

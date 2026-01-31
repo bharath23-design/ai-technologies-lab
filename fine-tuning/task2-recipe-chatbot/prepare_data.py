@@ -1,0 +1,29 @@
+"""Step 1: Prepare a recipe fine-tuning dataset and save to disk."""
+import json, pathlib
+
+RECIPES = [
+    {"ingredients": "egg, onion", "recipe": "Egg Onion Scramble: Heat oil, sauté diced onions until golden. Crack 2 eggs, season with salt and pepper, scramble together. Serve hot with toast."},
+    {"ingredients": "egg, tomato", "recipe": "Egg Tomato Stir-fry: Sauté chopped tomatoes in oil until soft. Beat 2 eggs with salt, pour over tomatoes, stir until set. Garnish with spring onion."},
+    {"ingredients": "chicken, garlic, soy sauce", "recipe": "Garlic Soy Chicken: Marinate chicken pieces in soy sauce and minced garlic for 30 min. Pan-fry on medium heat until cooked through. Serve with rice."},
+    {"ingredients": "pasta, tomato, cheese", "recipe": "Tomato Cheese Pasta: Boil pasta until al dente. In a pan, simmer crushed tomatoes with garlic and basil. Toss pasta in sauce, top with grated cheese."},
+    {"ingredients": "rice, egg, soy sauce", "recipe": "Egg Fried Rice: Cook rice and let it cool. Scramble eggs in a wok, add rice, drizzle soy sauce, toss on high heat for 3 minutes. Add spring onions."},
+    {"ingredients": "potato, onion, cumin", "recipe": "Aloo Fry: Dice potatoes, boil until tender. Heat oil with cumin seeds, add sliced onions, fry until golden. Add potatoes, salt, turmeric, cook 5 min."},
+    {"ingredients": "bread, egg, butter", "recipe": "French Toast: Beat eggs with milk, sugar, cinnamon. Dip bread slices, fry in butter until golden on both sides. Serve with honey or maple syrup."},
+    {"ingredients": "chicken, yogurt, spices", "recipe": "Tandoori Chicken: Marinate chicken in yogurt, turmeric, chili powder, garam masala for 2 hours. Bake at 200°C for 25 min until charred. Serve with naan."},
+    {"ingredients": "banana, milk, honey", "recipe": "Banana Smoothie: Blend 2 ripe bananas, 1 cup milk, 1 tbsp honey, and ice cubes until smooth. Pour into a glass and serve chilled."},
+    {"ingredients": "lentils, tomato, onion", "recipe": "Dal Tadka: Boil lentils until soft. In a pan, fry onions, add tomatoes, cumin, turmeric. Pour tempering over dal, simmer 5 min. Serve with rice."},
+    {"ingredients": "shrimp, garlic, butter", "recipe": "Garlic Butter Shrimp: Melt butter, sauté minced garlic. Add shrimp, cook 2 min each side. Season with salt, pepper, lemon juice. Garnish with parsley."},
+    {"ingredients": "flour, sugar, egg, butter", "recipe": "Basic Pancakes: Mix flour, sugar, baking powder. Add beaten egg, melted butter, milk. Ladle onto hot pan, flip when bubbles form. Serve with syrup."},
+    {"ingredients": "chickpeas, onion, lemon", "recipe": "Chana Chaat: Drain canned chickpeas, mix with diced onion, tomato, green chili, lemon juice, chaat masala, and cilantro. Toss and serve cold."},
+    {"ingredients": "mushroom, garlic, cream", "recipe": "Creamy Garlic Mushrooms: Slice mushrooms, sauté in butter with garlic until browned. Add cream, simmer 3 min. Season with salt, pepper, thyme."},
+    {"ingredients": "oats, milk, banana", "recipe": "Overnight Oats: Mix oats, milk, mashed banana, chia seeds in a jar. Refrigerate overnight. Top with nuts and berries before serving."},
+    {"ingredients": "paneer, capsicum, onion", "recipe": "Paneer Stir-fry: Cube paneer and capsicum. Sauté onions, add veggies, toss with soy sauce and chili flakes. Cook 5 min on high heat."},
+    {"ingredients": "egg, cheese, bread", "recipe": "Cheese Omelette Sandwich: Beat eggs, pour in a pan, add shredded cheese. Fold omelette, place between toasted bread slices. Serve with ketchup."},
+    {"ingredients": "tomato, cucumber, onion", "recipe": "Garden Salad: Dice tomato, cucumber, onion. Toss with olive oil, lemon juice, salt, pepper, and oregano. Serve chilled as a side dish."},
+    {"ingredients": "noodles, vegetables, soy sauce", "recipe": "Veg Hakka Noodles: Boil noodles, drain. Stir-fry julienned vegetables in oil, add noodles, soy sauce, vinegar, chili sauce. Toss on high heat."},
+    {"ingredients": "apple, cinnamon, sugar", "recipe": "Baked Apples: Core apples, fill with brown sugar and cinnamon. Place in baking dish with water, bake at 180°C for 30 min until tender."},
+]
+
+out = pathlib.Path(__file__).parent / "recipe_dataset.json"
+out.write_text(json.dumps(RECIPES, indent=2))
+print(f"Saved {len(RECIPES)} recipes to {out}")

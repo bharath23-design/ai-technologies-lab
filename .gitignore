@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+
+# Virtual environments
+venv/
+env/
+.venv/
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Model files & data (large files)
+*.bin
+*.safetensors
+*.pt
+*.pth
+*.onnx
+*.gguf
+finetuned_model/
+lancedb_names/
+checkpoints/
+
+# Training artifacts
+runs/
+logs/
+wandb/
+mlruns/
+
+# OS
+Thumbs.db
