@@ -1,8 +1,14 @@
+
+website : https://docs.langchain.com/oss/python/deepagents/customization#skills
+
+Public claude code system prompt : https://gist.github.com/agokrani/919b536246dd272a55157c21d46eda14
+
 # AI Agents — Types, Architectures & Frameworks
 
 ## What Is an AI Agent?
 
 An AI agent is an autonomous software system that can perceive its environment, reason, make decisions, and take actions to achieve goals — without step-by-step human instruction. Unlike a simple chatbot that responds to one prompt at a time, an agent can plan multi-step tasks, use tools, and self-correct.
+
 
 ```
 User Goal → Agent → [Think → Act → Observe] → ... → Result
@@ -267,3 +273,101 @@ Just starting out?
 4. **Cost** — each reasoning step is an LLM call
 5. **Security** — tool calls can have real-world side effects (emails, payments)
 6. **Error propagation** — early mistakes cascade through the plan
+
+---
+
+## Shallow vs Deep Agents
+
+### 1. Shallow Agents (Basic Agent)
+
+A basic agent is the simplest form of LLM-powered agent with a direct input-output flow.
+
+```
+┌─────────┐     ┌─────────┐     ┌─────────┐     ┌────────┐
+│  Input  │ ──► │   LLM   │ ──► │  Tools  │ ──► │ Output │
+│         │     │ (Brain) │     │(Serper  │     │        │
+│         │     │         │     │ DDG API)│     │        │
+└─────────┘     └─────────┘     └─────────┘     └────────┘
+```
+
+**Architecture:**
+- **Input** → User prompt or task
+- **LLM (Brain)** → Reasoning engine (GPT-4, Claude, etc.)
+- **Tools** → External APIs (Serper, DuckDuckGo, etc.)
+- **Output** → Generated response
+
+**Limitations (Cons):**
+- No explicit planning capabilities
+- Cannot handle complex queries effectively
+- Limited context retention (short-term memory only)
+- Single-step reasoning without decomposition
+- No self-correction mechanism
+
+---
+
+### 2. Multi-Agent Systems (LangGraph)
+
+For more complex tasks, frameworks like **LangGraph** enable sophisticated multi-agent orchestration.
+
+**Features:**
+- Connect multiple AI agents to collaborate on tasks
+- Add **Human-in-the-Loop** for approval at key decision points
+- Maintain **memory context** across agent interactions
+- Stateful workflows with persistent conversation history
+- Conditional routing between agents
+
+**Use Cases:**
+- Complex workflows requiring multiple specialized agents
+- Scenarios needing human oversight
+- Long-running tasks with memory requirements
+
+---
+
+### 3. Deep Agents
+
+Deep agents represent the most advanced agent architecture, capable of sophisticated planning, reasoning, and task decomposition. Examples: **Deep Search Agent** in Claude, ChatGPT, Manus AI.
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                        DEEP AGENT                               │
+│                                                                 │
+│  ┌──────────────┐    ┌─────────────────────────────────────┐   │
+│  │   Planning   │    │           Sub Agents                │   │
+│  │    Tool      │    │  ┌─────────┐ ┌─────────┐ ┌───────┐ │   │
+│  │              │───►│  │ Agent 1 │ │ Agent 2 │ │  ...  │ │   │
+│  │  (Todo List) │    │  └─────────┘ └─────────┘ └───────┘ │   │
+│  └──────────────┘    └─────────────────────────────────────┘   │
+│                                                                 │
+│  ┌──────────────┐    ┌─────────────────────────────────────┐   │
+│  │   System     │    │          File System                 │   │
+│  │   Prompt     │    │  ┌─────────────────────────────────┐ │   │
+│  │              │    │  │   Persistent Memory             │ │   │
+│  │              │───►│  │   (Shared across all agents)    │ │   │
+│  └──────────────┘    │  └─────────────────────────────────┘ │   │
+│                      └─────────────────────────────────────┘   │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+**Four Key Properties:**
+
+| Property | Description |
+|----------|-------------|
+| **1. Planning Tool** | Breaks down complex tasks into a todo list/action plan |
+| **2. Sub Agents** | Each todo item is delegated to a specialized sub-agent for execution |
+| **3. System Prompt** | Defines agent behavior, constraints, and role definitions |
+| **4. File System** | Persistent memory accessible to all sub-agents (shared context, documents, history) |
+
+**How Deep Agents Work:**
+
+1. **Planning** → The agent creates a structured todo list based on the user's goal
+2. **Decomposition** → Each todo item is assigned to a dedicated sub-agent
+3. **Execution** → Sub-agents work in parallel or sequence, using their specialized capabilities
+4. **Memory Sharing** → All sub-agents can access the file system for shared context and information
+5. **Synthesis** → Results are combined into a coherent final output
+
+**Advantages over Shallow Agents:**
+- Handles complex, multi-step queries
+- Maintains long-term memory across sessions
+- Self-correcting through planning and reflection
+- Specialized expertise through sub-agents
+- Scalable for enterprise-level tasks
