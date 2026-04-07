@@ -42,3 +42,7 @@ mlruns/
 
 # OS
 Thumbs.db
+
+chroma_store/
+
+env.txtrag/env.txt

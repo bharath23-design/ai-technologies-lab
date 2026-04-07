@@ -1,0 +1,7 @@
+{
+  "id": "019cfbca-c697-7ed8-8267-02ef7c8008e2",
+  "name": "Iris Data Drift Monitoring",
+  "description": "Automated data drift monitoring using PSI method.",
+  "org_id": null,
+  "version": "2"
+}

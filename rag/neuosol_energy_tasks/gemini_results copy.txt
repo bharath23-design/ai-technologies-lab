@@ -1,0 +1,30 @@
+{
+  "modules": {
+    "pixel": 64, [Actual is 60]
+    "vlm": 34
+  },
+  "full_rails": 20, [ actual is 18]
+  "cut_rails": 12,[ actual is 14]
+  "attachments": {
+    "pixel": 149,[Actual is 152]
+    "vlm": 78
+  },
+  "splices": 12 [Actual is 18]
+}
+
+
+{
+  "modules": {
+    "pixel": 64,[Actual is 60]
+    "vlm": 26
+  },
+  "full_rails": 16,[ actual is 18]
+  "cut_rails": 10,
+  "attachments": {
+    "pixel": 149,[Actual is 152]
+    "vlm": 62
+  },
+  "splices": 20[Actual is 18]
+}
+
+cad files : dwg

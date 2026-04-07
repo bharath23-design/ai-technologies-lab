@@ -1,0 +1,237 @@
+{
+  "metrics": [
+    {
+      "id": "389d65fb2d00b0140fed36faa82e6dc3",
+      "metric_name": "DriftedColumnsCount(drift_share=0.5,method=psi)",
+      "config": {
+        "type": "evidently:metric_v2:DriftedColumnsCount",
+        "drift_share": 0.5,
+        "method": "psi"
+      },
+      "value": {
+        "count": 5.0,
+        "share": 1.0
+      }
+    },
+    {
+      "id": "91aa1be09ef8976929199ff89952699c",
+      "metric_name": "ValueDrift(column=sepal length (cm),method=psi,threshold=0.1)",
+      "config": {
+        "type": "evidently:metric_v2:ValueDrift",
+        "column": "sepal length (cm)",
+        "method": "psi",
+        "threshold": 0.1
+      },
+      "value": 3.655547323184507
+    },
+    {
+      "id": "da4d26d28e7bf878b5c58392317e2168",
+      "metric_name": "ValueDrift(column=sepal width (cm),method=psi,threshold=0.1)",
+      "config": {
+        "type": "evidently:metric_v2:ValueDrift",
+        "column": "sepal width (cm)",
+        "method": "psi",
+        "threshold": 0.1
+      },
+      "value": 1.563246353007554
+    },
+    {
+      "id": "5fae49fcd4bd323ce929a3f028e79a84",
+      "metric_name": "ValueDrift(column=petal length (cm),method=psi,threshold=0.1)",
+      "config": {
+        "type": "evidently:metric_v2:ValueDrift",
+        "column": "petal length (cm)",
+        "method": "psi",
+        "threshold": 0.1
+      },
+      "value": 10.550068782433222
+    },
+    {
+      "id": "ef2eb2c2b58a983d041f97afc3ca6a3f",
+      "metric_name": "ValueDrift(column=petal width (cm),method=psi,threshold=0.1)",
+      "config": {
+        "type": "evidently:metric_v2:ValueDrift",
+        "column": "petal width (cm)",
+        "method": "psi",
+        "threshold": 0.1
+      },
+      "value": 9.899972642372788
+    },
+    {
+      "id": "0da7a8cae186e68cad4f95b3c9c5928e",
+      "metric_name": "ValueDrift(column=target,method=psi,threshold=0.1)",
+      "config": {
+        "type": "evidently:metric_v2:ValueDrift",
+        "column": "target",
+        "method": "psi",
+        "threshold": 0.1
+      },
+      "value": 11.823706079283312
+    }
+  ],
+  "tests": [
+    {
+      "id": "lt",
+      "name": "Share of Drifted Columns: Less 0.500",
+      "description": "Share of Drifted Columns: Actual value 1.000 >= 0.500",
+      "metric_config": {
+        "metric_id": "389d65fb2d00b0140fed36faa82e6dc3",
+        "params": {
+          "type": "evidently:metric_v2:DriftedColumnsCount",
+          "drift_share": 0.5,
+          "method": "psi"
+        }
+      },
+      "test_config": {
+        "type": "evidently:test_v2:LessThanMetricTest",
+        "is_critical": true,
+        "alias": null,
+        "label_filters": null,
+        "threshold": 0.5
+      },
+      "status": "FAIL",
+      "bound_test": {
+        "type": "evidently:bound_test:CountBoundTest",
+        "test": {
+          "type": "evidently:test_v2:LessThanMetricTest",
+          "is_critical": true,
+          "alias": null,
+          "label_filters": null,
+          "threshold": 0.5
+        },
+        "metric_fingerprint": "389d65fb2d00b0140fed36faa82e6dc3",
+        "is_count": false
+      }
+    },
+    {
+      "id": "drift",
+      "name": "Value Drift for column sepal length (cm)",
+      "description": "Drift score is 3.66. The drift detection method is PSI. The drift threshold is 0.10.",
+      "metric_config": {
+        "metric_id": "91aa1be09ef8976929199ff89952699c",
+        "params": {
+          "type": "evidently:metric_v2:ValueDrift",
+          "column": "sepal length (cm)",
+          "method": "psi",
+          "threshold": 0.1
+        }
+      },
+      "test_config": {},
+      "status": "FAIL",
+      "bound_test": {
+        "type": "evidently:bound_test:ValueDriftBoundTest",
+        "test": {
+          "type": "evidently:test_v2:ValueDriftTest",
+          "is_critical": true,
+          "alias": null,
+          "label_filters": null
+        },
+        "metric_fingerprint": "91aa1be09ef8976929199ff89952699c"
+      }
+    },
+    {
+      "id": "drift",
+      "name": "Value Drift for column sepal width (cm)",
+      "description": "Drift score is 1.56. The drift detection method is PSI. The drift threshold is 0.10.",
+      "metric_config": {
+        "metric_id": "da4d26d28e7bf878b5c58392317e2168",
+        "params": {
+          "type": "evidently:metric_v2:ValueDrift",
+          "column": "sepal width (cm)",
+          "method": "psi",
+          "threshold": 0.1
+        }
+      },
+      "test_config": {},
+      "status": "FAIL",
+      "bound_test": {
+        "type": "evidently:bound_test:ValueDriftBoundTest",
+        "test": {
+          "type": "evidently:test_v2:ValueDriftTest",
+          "is_critical": true,
+          "alias": null,
+          "label_filters": null
+        },
+        "metric_fingerprint": "da4d26d28e7bf878b5c58392317e2168"
+      }
+    },
+    {
+      "id": "drift",
+      "name": "Value Drift for column petal length (cm)",
+      "description": "Drift score is 10.55. The drift detection method is PSI. The drift threshold is 0.10.",
+      "metric_config": {
+        "metric_id": "5fae49fcd4bd323ce929a3f028e79a84",
+        "params": {
+          "type": "evidently:metric_v2:ValueDrift",
+          "column": "petal length (cm)",
+          "method": "psi",
+          "threshold": 0.1
+        }
+      },
+      "test_config": {},
+      "status": "FAIL",
+      "bound_test": {
+        "type": "evidently:bound_test:ValueDriftBoundTest",
+        "test": {
+          "type": "evidently:test_v2:ValueDriftTest",
+          "is_critical": true,
+          "alias": null,
+          "label_filters": null
+        },
+        "metric_fingerprint": "5fae49fcd4bd323ce929a3f028e79a84"
+      }
+    },
+    {
+      "id": "drift",
+      "name": "Value Drift for column petal width (cm)",
+      "description": "Drift score is 9.90. The drift detection method is PSI. The drift threshold is 0.10.",
+      "metric_config": {
+        "metric_id": "ef2eb2c2b58a983d041f97afc3ca6a3f",
+        "params": {
+          "type": "evidently:metric_v2:ValueDrift",
+          "column": "petal width (cm)",
+          "method": "psi",
+          "threshold": 0.1
+        }
+      },
+      "test_config": {},
+      "status": "FAIL",
+      "bound_test": {
+        "type": "evidently:bound_test:ValueDriftBoundTest",
+        "test": {
+          "type": "evidently:test_v2:ValueDriftTest",
+          "is_critical": true,
+          "alias": null,
+          "label_filters": null
+        },
+        "metric_fingerprint": "ef2eb2c2b58a983d041f97afc3ca6a3f"
+      }
+    },
+    {
+      "id": "drift",
+      "name": "Value Drift for column target",
+      "description": "Drift score is 11.82. The drift detection method is PSI. The drift threshold is 0.10.",
+      "metric_config": {
+        "metric_id": "0da7a8cae186e68cad4f95b3c9c5928e",
+        "params": {
+          "type": "evidently:metric_v2:ValueDrift",
+          "column": "target",
+          "method": "psi",
+          "threshold": 0.1
+        }
+      },
+      "test_config": {},
+      "status": "FAIL",
+      "bound_test": {
+        "type": "evidently:bound_test:ValueDriftBoundTest",
+        "test": {
+          "type": "evidently:test_v2:ValueDriftTest",
+          "is_critical": true,
+          "alias": null,
+          "label_filters": null
+        },
+        "metric_fingerprint": "0da7a8cae186e68cad4f95b3c9c5928e"
+      }
+    }
+  ]
+}

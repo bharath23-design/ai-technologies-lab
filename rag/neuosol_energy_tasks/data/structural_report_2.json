@@ -1,0 +1,44 @@
+{
+  "ground snow load": {
+    "parameter": "ground snow load",
+    "value": "50",
+    "unit": "PSF",
+    "source_snippet": "Ground Snow Load, Pg: 50 PSF"
+  },
+  "roof snow load": {
+    "parameter": "roof snow load",
+    "value": "31.50",
+    "unit": "PSF",
+    "source_snippet": "Flat Roof Snow Load, Pf: 31.50 PSF"
+  },
+  "wind speed": {
+    "parameter": "wind speed",
+    "value": "126",
+    "unit": "mph",
+    "source_snippet": "Wind Speed 126 mph (ultimate)"
+  },
+  "seismic SS": {
+    "parameter": "seismic SS",
+    "value": null,
+    "unit": null,
+    "source_snippet": null
+  },
+  "seismic S1": {
+    "parameter": "seismic S1",
+    "value": null,
+    "unit": null,
+    "source_snippet": null
+  },
+  "seismic SDS": {
+    "parameter": "seismic SDS",
+    "value": null,
+    "unit": null,
+    "source_snippet": null
+  },
+  "seismic SD1": {
+    "parameter": "seismic SD1",
+    "value": null,
+    "unit": null,
+    "source_snippet": null
+  }
+}

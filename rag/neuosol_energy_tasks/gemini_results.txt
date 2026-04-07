@@ -1,0 +1,7 @@
+| Component   | Visual Identifier   | Quantity |
+|-------------|---------------------|----------|
+| Modules     | Blue Rectangles     | 44       | 
+| Full Rails  | Green Line Segments | 16       |
+| Cut Rails   | Red Line Segments   | 8        | 
+| Attachments | Blue Circles        | 108      |
+| Splices     | Black Rectangles    | 16       | 

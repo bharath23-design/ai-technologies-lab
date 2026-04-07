@@ -1,0 +1,44 @@
+{
+  "ground snow load": {
+    "parameter": "ground snow load",
+    "value": "50",
+    "unit": "psf",
+    "source_snippet": "Ground Snow Load, Pg: City of Salem, MA = 50 psf (Mass Building Code, 780 CMR, 10th Ed.)"
+  },
+  "roof snow load": {
+    "parameter": "roof snow load",
+    "value": "43.0",
+    "unit": "psf",
+    "source_snippet": "Use 43.0 psf roof snow load per Mass Building Code 10th Ed."
+  },
+  "wind speed": {
+    "parameter": "wind speed",
+    "value": "128",
+    "unit": "mph",
+    "source_snippet": "City of Salem, MA = 128 mph (Mass Building Code, 780 CMR, 10th Ed.)"
+  },
+  "seismic SS": {
+    "parameter": "seismic SS",
+    "value": "0.307",
+    "unit": null,
+    "source_snippet": "SS = 0.307 (Mass Building Code 10th ed. Table 1604.11)"
+  },
+  "seismic S1": {
+    "parameter": "seismic S1",
+    "value": "0.070",
+    "unit": null,
+    "source_snippet": "S1 = 0.070 (Mass Building Code 10th ed. Table 1604.11)"
+  },
+  "seismic SDS": {
+    "parameter": "seismic SDS",
+    "value": "0.327",
+    "unit": null,
+    "source_snippet": "SDS = 2/3 x SMS = 2/3 x 0.491 = 0.327 (IBC Equation 16-22)"
+  },
+  "seismic SD1": {
+    "parameter": "seismic SD1",
+    "value": "0.112",
+    "unit": null,
+    "source_snippet": "SD1 = 2/3 x SM1 = 2/3 x 0.168 = 0.112 (IBC Equation 16-23)"
+  }
+}

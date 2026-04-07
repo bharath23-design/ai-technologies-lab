@@ -1,0 +1,44 @@
+{
+  "ground snow load": {
+    "parameter": "ground snow load",
+    "value": "60",
+    "unit": "psf",
+    "source_snippet": "Ground Snow Load, Pg: City of Leominster, MA = 60 psf (Mass Building Code, 780 CMR, 10th Ed.)"
+  },
+  "roof snow load": {
+    "parameter": "roof snow load",
+    "value": "42.0",
+    "unit": "psf",
+    "source_snippet": "Flat Roof snow load = Pf = 0.7 Ce Ct I pg = 0.7 x 1.0 x 1.0 x 1.0 x 60 psf = 42.0 psf (ASCE-7, Eq7.3-1)"
+  },
+  "wind speed": {
+    "parameter": "wind speed",
+    "value": "115",
+    "unit": "mph",
+    "source_snippet": "Basic Wind Speed: City of Leominster, MA = 115 mph (Mass Building Code, 780 CMR, 10th Ed.)"
+  },
+  "seismic SS": {
+    "parameter": "seismic SS",
+    "value": null,
+    "unit": null,
+    "source_snippet": null
+  },
+  "seismic S1": {
+    "parameter": "S1",
+    "value": "0.163",
+    "unit": null,
+    "source_snippet": "SD1 = 2/3 x SM1 = 2/3 x 0.163 = 0.109 (IBC Equation 16-23)"
+  },
+  "seismic SDS": {
+    "parameter": "seismic SDS",
+    "value": "0.163",
+    "unit": null,
+    "source_snippet": "SD1 = 2/3 x SM1 = 2/3 x 0.163 = 0.109 (IBC Equation 16-23)"
+  },
+  "seismic SD1": {
+    "parameter": "seismic SD1",
+    "value": "0.109",
+    "unit": null,
+    "source_snippet": "SD1 = 2/3 x SM1 = 2/3 x 0.163 = 0.109 (IBC Equation 16-23)"
+  }
+}

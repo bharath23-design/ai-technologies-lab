@@ -1,0 +1,13 @@
+{
+  "modules": {
+    "pixel": 44,
+    "vlm": 40
+  },
+  "full_rails": 16,
+  "cut_rails": 8,
+  "attachments": {
+    "pixel": 108,
+    "vlm": 88
+  },
+  "splices": 16
+}
