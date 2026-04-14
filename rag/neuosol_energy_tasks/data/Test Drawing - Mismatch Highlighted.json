@@ -1,0 +1,70 @@
+[
+  {
+    "page": 1,
+    "sheet_id": "",
+    "key_plan": {
+      "roof_area": "ROOF AREA 1",
+      "array_value": "ARRAY 1"
+    },
+    "title_block": {
+      "roof_area": "ROOF AREA 1",
+      "array_value": "ARRAY 1"
+    },
+    "mismatches": [],
+    "has_mismatch": false,
+    "extraction_method": "ocr",
+    "detection_mode": "value"
+  },
+  {
+    "page": 2,
+    "sheet_id": "",
+    "key_plan": {
+      "roof_area": "ROOF AREA 1",
+      "array_value": "ARRAY 2"
+    },
+    "title_block": {
+      "roof_area": "ROOF AREA 1",
+      "array_value": "ARRAY 1"
+    },
+    "mismatches": [
+      "Array Value MISMATCH -> Key Plan='ARRAY 2'  vs  Title Block='ARRAY 1'"
+    ],
+    "has_mismatch": true,
+    "extraction_method": "ocr",
+    "detection_mode": "value"
+  },
+  {
+    "page": 3,
+    "sheet_id": "",
+    "key_plan": {
+      "roof_area": "ROOF AREA 2",
+      "array_value": "ARRAY 1"
+    },
+    "title_block": {
+      "roof_area": "ROOF AREA 2",
+      "array_value": "ARRAY 1"
+    },
+    "mismatches": [],
+    "has_mismatch": false,
+    "extraction_method": "ocr",
+    "detection_mode": "value"
+  },
+  {
+    "page": 4,
+    "sheet_id": "",
+    "key_plan": {
+      "roof_area": "ROOF AREA 2",
+      "array_value": "ARRAY 1"
+    },
+    "title_block": {
+      "roof_area": "ROOF AREA 2",
+      "array_value": "ARRAY 2"
+    },
+    "mismatches": [
+      "Array Value MISMATCH -> Key Plan='ARRAY 1'  vs  Title Block='ARRAY 2'"
+    ],
+    "has_mismatch": true,
+    "extraction_method": "ocr",
+    "detection_mode": "value"
+  }
+]
